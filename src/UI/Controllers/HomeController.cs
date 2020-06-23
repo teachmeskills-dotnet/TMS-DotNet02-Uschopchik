@@ -13,8 +13,14 @@ namespace UI.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string text)
+        public ActionResult Search(string text)
         {
+            [HttpGet]
+            public IActionResult Action()
+            {
+                return View();
+            }
+            [HttpPost]
             async Task<MusixMatchModel> GetDataAsync(string text)
             {
                 return await "http://api.musixmatch.com"
@@ -23,8 +29,6 @@ namespace UI.Controllers
                     .GetAsync()
                     .ReceiveJson<MusixMatchModel>();
             }
-
-            return View();
         }
     }
 }

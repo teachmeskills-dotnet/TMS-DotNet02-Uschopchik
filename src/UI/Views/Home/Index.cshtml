@@ -1,1 +1,22 @@
-﻿<h2>Welcome to ASP.NET MVC @ViewData["Version"] on @ViewData["Runtime"]!</h2>
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            <table>
+                <tr>
+                    <td><input type="text" name="text" /> </td>
+                </tr>
+                <tr><td><input type="submit" value="search" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
