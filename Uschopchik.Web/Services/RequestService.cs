@@ -10,8 +10,8 @@ namespace Uschopchik.Web.Services
     {
         public async Task<MusixMatchModel> GetDataAsync(string text)
         {
-            return await "http://api.musixmatch.com"
-                .AppendPathSegments("ws", "1.1", "track.search")
+            const string webApi = "http://api.musixmatch.com";
+            return await webApi.AppendPathSegments("ws", "1.1", "track.search")
                 .SetQueryParams(new { apikey = "5b86287ec6291f8d5460e86827bbacd7", q_lyrics = text })
                 .GetAsync()
                 .ReceiveJson<MusixMatchModel>();
